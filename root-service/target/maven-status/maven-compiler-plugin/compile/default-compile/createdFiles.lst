@@ -1,4 +1,4 @@
-shooter/root/RootApplication.class
-shooter/root/config/HibernateConfig.class
-shooter/root/entities/User.class
-shooter/root/controller/HelloController.class
+shooter\root\entities\User.class
+shooter\root\config\HibernateConfig.class
+shooter\root\controller\HelloController.class
+shooter\root\RootApplication.class

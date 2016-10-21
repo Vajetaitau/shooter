@@ -18,3 +18,8 @@ spring:
         dialect: org.hibernate.dialect.PostgreSQLDialect
         temp:
           use_jdbc_metadata_defaults: false
+
+logging:
+  level:
+    org.springframework.web=DEBUG
+    org.hibernate=ERROR

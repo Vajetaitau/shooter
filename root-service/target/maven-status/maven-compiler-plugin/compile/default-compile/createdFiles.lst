@@ -1,4 +1,9 @@
 shooter\root\entities\User.class
 shooter\root\config\HibernateConfig.class
-shooter\root\controller\HelloController.class
 shooter\root\RootApplication.class
+shooter\root\dao\UserDao.class
+shooter\root\config\WebConfig.class
+shooter\root\config\WebConfig$1.class
+shooter\root\controller\HelloController.class
+shooter\root\controller\ShooterSockerController.class
+shooter\root\entities\Base.class

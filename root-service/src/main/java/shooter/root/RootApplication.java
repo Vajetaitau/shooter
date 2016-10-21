@@ -1,11 +1,10 @@
 package shooter.root;
 
-import java.util.Arrays;
-
 import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ApplicationContext;
+
+import java.util.Arrays;
 
 /**
  * Created by owner on 10/13/16.

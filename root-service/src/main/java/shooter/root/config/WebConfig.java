@@ -16,9 +16,9 @@ public class WebConfig {
         return new WebMvcConfigurerAdapter() {
             @Override
             public void addViewControllers(ViewControllerRegistry registry) {
-                // forward requests to /admin and /user to their index.html
-                registry.addViewController("/admin").setViewName(
-                        "forward:/admin/index.html");
+                // forward requests to /private and /user to their index.html
+                registry.addViewController("/p").setViewName(
+                        "forward:/private/index.html");
                 registry.addViewController("/").setViewName(
                         "forward:/guest/index.html");
             }

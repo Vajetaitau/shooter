@@ -6,6 +6,7 @@ import org.springframework.security.config.annotation.authentication.builders.Au
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import shooter.root.enums.RoleEnum;
 
 /**
  * Created by karol on 10/24/2016.
@@ -21,6 +22,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                     .antMatchers("/guest/**").permitAll()
                     .antMatchers("/common/**").permitAll()
                     .antMatchers("/csrf").permitAll() // Cross site request forgery
+                    .antMatchers("/action/**").permitAll()//.hasAnyRole(RoleEnum.SHOOTER.name())
                     .anyRequest().authenticated()
                     .and()
                 .formLogin()
@@ -36,6 +38,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         auth
                 .inMemoryAuthentication()
-                    .withUser("user").password("password").roles("USER");
+                    .withUser("user").password("password").roles(RoleEnum.SHOOTER.name());
     }
 }

@@ -3,7 +3,6 @@
     $(document).ready(function() {
         console.log('ready');
         appendLoginFormToBody();
-        getCsrfToken();
     });
 
     function appendLoginFormToBody() {

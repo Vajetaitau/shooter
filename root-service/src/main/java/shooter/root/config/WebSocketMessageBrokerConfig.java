@@ -11,7 +11,9 @@ import org.springframework.web.socket.config.annotation.EnableWebSocketMessageBr
 import org.springframework.web.socket.config.annotation.StompEndpointRegistry;
 import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry;
 import org.springframework.web.socket.server.HandshakeInterceptor;
+import shooter.root.details.ShooterDetails;
 import shooter.root.details.ShooterMap;
+import shooter.root.services.ShooterService;
 
 import java.util.Map;
 
@@ -40,9 +42,6 @@ public class WebSocketMessageBrokerConfig extends AbstractWebSocketMessageBroker
 
 class MainHandshakeInterceptor implements HandshakeInterceptor {
 
-    @Autowired
-    private ShooterMap shooterMap;
-
     @Override
     public boolean beforeHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Map<String, Object> map) throws Exception {
         System.out.print("BEFORE");
@@ -52,6 +51,5 @@ class MainHandshakeInterceptor implements HandshakeInterceptor {
     @Override
     public void afterHandshake(ServerHttpRequest serverHttpRequest, ServerHttpResponse serverHttpResponse, WebSocketHandler webSocketHandler, Exception e) {
         System.out.print("AFTER");
-//        serverHttpRequest.getHeaders().
     }
 }

@@ -9,7 +9,11 @@ $(document).ready(function() {
         $shooterSocket.subscribe(function () {
 
         });
-    })
+    });
+
+    $shooterController.saveShooter({
+        'name': 'Carl'
+    });
 
     draw();
 
@@ -87,7 +91,7 @@ function Canvas() {
         $('#canvas').click(function(e) {
             var x = e.clientX;
             var y = e.clientY;
-            alert(x + ' ' + y);
+            console.log(x + ' ' + y);
         });
     };
 }

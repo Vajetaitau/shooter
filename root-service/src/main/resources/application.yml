@@ -2,22 +2,35 @@ server:
   port: 8000
 
 spring:
-  datasource:
-    driverClassName: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/root-service
-    username: postgres
-    password: postgres
-    test-on-borrow: true
-    validation-query: "SELECT 1;"
-    validation-interval: 15000
-  jpa:
-    database: POSTGRESQL
-    hibernate.ddl-auto: update
-    properties:
+  primary:
+    datasource:
+      driverClassName: org.postgresql.Driver
+      url: jdbc:postgresql://localhost:5432/root-service
+      username: postgres
+      password: postgres
+      test-on-borrow: true
+      validation-query: "SELECT 1;"
+      validation-interval: 15000
+    jpa:
+      database: POSTGRESQL
+      hibernate.ddl-auto: update
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.PostgreSQLDialect
+          temp:
+            use_jdbc_metadata_defaults: false
+  secondary:
+    datasource:
+      driverClassName: org.h2.Driver
+      url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1
+      username: sa
+      password:
+    jpa:
       hibernate:
-        dialect: org.hibernate.dialect.PostgreSQLDialect
-        temp:
-          use_jdbc_metadata_defaults: false
+        ddl-auto: create
+      properties:
+        hibernate:
+          dialect: org.hibernate.dialect.H2Dialect
 
 logging:
   level:
